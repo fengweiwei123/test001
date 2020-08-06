@@ -1,0 +1,7 @@
+sudo cat /etc/group | grep docker
+sudo groupadd docker
+sudo gpasswd -a ${itcast} docker
+sudo service docker restart
+sudo chmod a+rw /var/run/docker.sock
+docker-compose -f docker-orderer.yaml up -d
+service docker restart
